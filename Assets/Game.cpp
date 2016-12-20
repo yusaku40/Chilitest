@@ -35,4 +35,7 @@ void Game::Go()
 }
 
 void Game::ComposeFrame()
-{}
+{
+	gfx.PutPixel(100, 100, 20, 0, 200);
+
+}
