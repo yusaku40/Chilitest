@@ -38,5 +38,6 @@ void Game::ComposeFrame()
 {
 	for (int i=0; i < 10; i++) {
 		gfx.PutPixel(100 + i, 100, 100, 0, 255);
+		gfx.PutPixel(100 , 100 + i, 100, 0, 255);
 	}
 }
