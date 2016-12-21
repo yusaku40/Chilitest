@@ -19,13 +19,17 @@
  *	along with The Chili DirectX Framework.  If not, see <http://www.gnu.org/licenses/>.  *
  ******************************************************************************************/
 #include "Game.h"
+#include "Font.h"
 
 Game::Game( HWND hWnd,const KeyboardServer& kServer,const MouseServer& mServer )
-:	gfx( hWnd ),
+:	
+	gfx(hWnd),
 	audio( hWnd ),
 	kbd( kServer ),
 	mouse( mServer )
-{}
+{
+	 
+}
 
 void Game::Go()
 {
@@ -36,8 +40,11 @@ void Game::Go()
 
 void Game::ComposeFrame()
 {
+	Font font;
 	for (int i=0; i < 10; i++) {
 		gfx.PutPixel(100 + i, 100, 100, 0, 255);
 		gfx.PutPixel(100 , 100 + i, 100, 0, 255);
 	}
+	font.PrintGlyph(gfx,'A', 200, 200);
+	font.PrintGlyph(gfx, 'A', 212, 200);
 }

@@ -24,11 +24,13 @@
 #include "Keyboard.h"
 #include "Mouse.h"
 #include "Sound.h"
+#include "Font.h"
 
 class Game
 {
 public:
 	Game( HWND hWnd,const KeyboardServer& kServer,const MouseServer& mServer );
+	D3DGraphics gfx;
 	void Go();
 private:
 	void ComposeFrame();
@@ -37,7 +39,7 @@ private:
 
 	/********************************/
 private:
-	D3DGraphics gfx;
+	
 	KeyboardClient kbd;
 	MouseClient mouse;
 	DSound audio;

@@ -83,6 +83,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Assets\D3DGraphics.cpp" />
+    <ClCompile Include="..\Assets\Font.cpp" />
     <ClCompile Include="..\Assets\Game.cpp" />
     <ClCompile Include="..\Assets\Keyboard.cpp" />
     <ClCompile Include="..\Assets\Mouse.cpp" />
@@ -92,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Assets\D3DGraphics.h" />
+    <ClInclude Include="..\Assets\Font.h" />
     <ClInclude Include="..\Assets\Game.h" />
     <ClInclude Include="..\Assets\Keyboard.h" />
     <ClInclude Include="..\Assets\Mouse.h" />
