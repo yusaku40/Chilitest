@@ -41,10 +41,15 @@ void Game::Go()
 void Game::ComposeFrame()
 {
 	Font font;
-	for (int i=0; i < 10; i++) {
+	Color color(100, 100, 100);
+
+	for (int i=0; i < 10; i++) {					//just putpixel test
 		gfx.PutPixel(100 + i, 100, 100, 0, 255);
 		gfx.PutPixel(100 , 100 + i, 100, 0, 255);
 	}
-	font.PrintGlyph(gfx,'A', 200, 200);
-	font.PrintGlyph(gfx, 'A', 212, 200);
+
+	font.PrintGlyph(gfx,'A', 200, 200, color);		//fonttest 1
+	font.PrintGlyph(gfx,'B', 210, 200, color);
+	font.PrintGlyph(gfx, 'C', 220, 200, color);
+	font.PrintGlyph(gfx, 'D', 230, 200, color);
 }
