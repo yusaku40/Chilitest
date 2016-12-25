@@ -44,6 +44,7 @@ public:
 	void DrawLine(int x1, int y1, int x2, int y2, Color color); // Simple overload to use Color class
 	void DrawCircle( int cx,int cy,int radius,int r,int g,int b );
 	void DrawDisc( int cx,int cy,int r,int rd,int g,int b );
+	void DrawFilledRect(int x1, int y1, int x2, int y2, Color color);
 	void BeginFrame();
 	void EndFrame();
 private:

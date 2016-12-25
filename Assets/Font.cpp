@@ -97,6 +97,76 @@ bool Font::PrintGlyph(D3DGraphics& gRef,int glyph,int startX,int startY,Color co
 			return true;
 			break;
 
+		case 53:	// 5
+			g.linecount = 4;
+			g.points[0] = { startX  , startY };
+			g.points[1] = { startX + 6 , startY - 3 };
+			g.points[2] = { startX  , startY - 5 };
+			g.points[3] = { startX   , startY -10 };
+			g.points[4] = { startX +6  , startY -10 };
+			for (int i = 0; i < g.linecount; i++) {
+				gRef.DrawLine(g.points[i].a, g.points[i].b, g.points[i + 1].a, g.points[i + 1].b, color);
+			}
+			return true;
+			break;
+
+		case 54:	// 6
+			g.linecount = 7;
+			g.points[0] = { startX +6  , startY -9   };
+			g.points[1] = { startX + 3 , startY - 10 };
+			g.points[2] = { startX     , startY - 8  };
+			g.points[3] = { startX     , startY - 4  };
+			g.points[4] = { startX + 1 , startY      };
+			g.points[5] = { startX + 4 , startY      };
+			g.points[6] = { startX +6  , startY - 4  };
+			g.points[7] = { startX     , startY - 4  };
+			for (int i = 0; i < g.linecount; i++) {
+				gRef.DrawLine(g.points[i].a, g.points[i].b, g.points[i + 1].a, g.points[i + 1].b, color);
+			}
+			return true;
+			break;
+
+
+		case 55:	// 7
+			g.linecount = 2;
+			g.points[0] = { startX  , startY -10 };
+			g.points[1] = { startX + 6 , startY - 10 };
+			g.points[2] = { startX +3 , startY  };
+			for (int i = 0; i < g.linecount; i++) {
+				gRef.DrawLine(g.points[i].a, g.points[i].b, g.points[i + 1].a, g.points[i + 1].b, color);
+			}
+			return true;
+			break;
+
+		case 56:	// 8
+			g.linecount = 6;
+			g.points[0] = { startX + 0 , startY  };
+			g.points[1] = { startX + 0 , startY - 10 };
+			g.points[2] = { startX + 6 , startY -10 };
+			g.points[3] = { startX + 6 , startY };
+			g.points[4] = { startX + 0 , startY };
+			g.points[5] = { startX + 0 , startY - 5 };
+			g.points[6] = { startX + 6 , startY - 5 };
+			for (int i = 0; i < g.linecount; i++) {
+				gRef.DrawLine(g.points[i].a, g.points[i].b, g.points[i + 1].a, g.points[i + 1].b, color);
+			}
+			return true;
+			break;
+
+		case 57:	// 9
+			g.linecount = 5;
+			g.points[0] = { startX + 0, startY - 0 };
+			g.points[1] = { startX + 6, startY - 4 };
+			g.points[2] = { startX + 6, startY - 9 };
+			g.points[3] = { startX + 0, startY - 9 };
+			g.points[4] = { startX + 0, startY - 4 };
+			g.points[5] = { startX + 6, startY - 4 };
+			for (int i = 0; i < g.linecount; i++) {
+				gRef.DrawLine(g.points[i].a, g.points[i].b, g.points[i + 1].a, g.points[i + 1].b, color);
+			}
+			return true;
+			break;
+
 		case 58 :	// :
 			g.linecount = 1;
 			g.points[0] = { startX + 3 , startY -2 };

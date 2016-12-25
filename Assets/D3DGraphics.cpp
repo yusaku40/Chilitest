@@ -122,6 +122,15 @@ void D3DGraphics::DrawDisc( int cx,int cy,int r,int rd,int g,int b )
 	}
 }
 
+void D3DGraphics::DrawFilledRect(int x1, int y1, int x2, int y2, Color color)
+{
+	for (int a = x1; a <= x2; a++) {
+		for (int b = y1; b <= y2; b++) {
+			D3DGraphics::PutPixel(a, b, color);
+		}
+	}
+}
+
 void D3DGraphics::DrawLine( int x1,int y1,int x2,int y2,int r,int g,int blu )
 {
 	int dx = x2 - x1;

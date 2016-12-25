@@ -21,6 +21,8 @@
 #include "Game.h"
 #include "Font.h"
 #include <iostream>
+
+
 using namespace std;
 
 Game::Game( HWND hWnd,const KeyboardServer& kServer,const MouseServer& mServer )
@@ -35,7 +37,9 @@ Game::Game( HWND hWnd,const KeyboardServer& kServer,const MouseServer& mServer )
 
 void Game::Go()
 {
+	
 	gfx.BeginFrame();
+	
 	ComposeFrame();
 	gfx.EndFrame();
 }
@@ -55,6 +59,8 @@ void Game::ComposeFrame()
 	Color color2(255, 0, 255);
 	gfx.PutPixel(300, 100, color2);  //test PutPixel overload
 
+	gfx.DrawFilledRect(100, 100, 300, 50, color2);
+
 	font.PrintGlyph(gfx,'A', 200, 200, color);		//fonttest 1
 	font.PrintGlyph(gfx,'B', 209, 200, color);
 	font.PrintGlyph(gfx, 'C', 218, 200, color);
@@ -71,13 +77,15 @@ void Game::ComposeFrame()
 	font.PrintGlyph(gfx, buffer[2], 50, 20, color);
 	font.PrintGlyph(gfx, buffer[3], 50, 20, color);
 
-	test = mouse.GetMouseY();			/// Get mouse pos X and display in TL corner
+
+	int test2 = mouse.GetMouseY();			/// Get mouse pos X and display in TL corner
 	char buffer2[10];
-	itoa(test, buffer2, 10);
+	itoa(test2, buffer2, 10);
 	font.PrintGlyph(gfx, 'Y',	    10, 40, color);
 	font.PrintGlyph(gfx, ':',	    20, 40, color);
-	font.PrintGlyph(gfx, buffer[0], 30, 40, color);
-	font.PrintGlyph(gfx, buffer[1], 40, 40, color);
-	font.PrintGlyph(gfx, buffer[2], 50, 40, color);
-	font.PrintGlyph(gfx, buffer[3], 50, 40, color);
+	font.PrintGlyph(gfx, buffer2[0], 30, 40, color);
+	font.PrintGlyph(gfx, buffer2[1], 40, 40, color);
+	font.PrintGlyph(gfx, buffer2[2], 50, 40, color);
+	font.PrintGlyph(gfx, buffer2[3], 50, 40, color);
+
 }
