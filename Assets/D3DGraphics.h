@@ -22,13 +22,26 @@
 
 #include <d3d9.h>
 
+//Simple color system
+class Color {		
+public:
+	Color(int r, int g, int b);
+
+	int r;
+	int g;
+	int b;
+};
+
+
 class D3DGraphics
 {
 public:
 	D3DGraphics( HWND hWnd );
 	~D3DGraphics();
 	void PutPixel( int x,int y,int r,int g,int b );
+	void PutPixel(int x, int y, Color color);	// simple overload to use Color class
 	void DrawLine( int x1,int y1,int x2,int y2,int r,int g,int b );
+	void DrawLine(int x1, int y1, int x2, int y2, Color color); // Simple overload to use Color class
 	void DrawCircle( int cx,int cy,int radius,int r,int g,int b );
 	void DrawDisc( int cx,int cy,int r,int rd,int g,int b );
 	void BeginFrame();

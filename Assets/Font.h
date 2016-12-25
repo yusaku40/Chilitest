@@ -3,14 +3,7 @@
 #include "D3DGraphics.h"
 
 
-class Color {
-public:
-	Color(int r, int g, int b);
 
-	int r;
-	int g;
-	int b;
-};
 
 class Vec2 {
 public:

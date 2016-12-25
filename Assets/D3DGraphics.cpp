@@ -22,6 +22,14 @@
 #include <math.h>
 #include <assert.h>
 
+// Simple color system constructor
+Color::Color(int r, int g, int b)
+{
+	this->r = r;
+	this->g = g;
+	this->b = b;
+}
+
 D3DGraphics::D3DGraphics( HWND hWnd )
 {
 	HRESULT result;
@@ -73,6 +81,9 @@ void D3DGraphics::PutPixel( int x,int y,int r,int g,int b )
 	assert( x < 800 );
 	assert( y < 600 );
 	((D3DCOLOR*)backRect.pBits)[ x + (backRect.Pitch >> 2) * y ] = D3DCOLOR_XRGB( r,g,b );
+}
+void D3DGraphics::PutPixel(int x, int y, Color color) {		// simple overload to use Color class
+	D3DGraphics::PutPixel(x, y, color.r, color.g, color.b);
 }
 
 void D3DGraphics::BeginFrame()
@@ -158,6 +169,9 @@ void D3DGraphics::DrawLine( int x1,int y1,int x2,int y2,int r,int g,int blu )
 			PutPixel( x,y,r,g,blu );
 		}
 	}
+}
+void D3DGraphics::DrawLine(int x1, int y1, int x2, int y2, Color color) {		// Simple overload to use Color class
+	D3DGraphics::DrawLine(x1, y1, x2, y2, color.r, color.g, color.b);
 }
 
 void D3DGraphics::DrawCircle( int centerX,int centerY,int radius,int r,int g,int b )

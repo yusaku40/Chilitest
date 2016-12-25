@@ -20,6 +20,8 @@
  ******************************************************************************************/
 #include "Game.h"
 #include "Font.h"
+#include <iostream>
+using namespace std;
 
 Game::Game( HWND hWnd,const KeyboardServer& kServer,const MouseServer& mServer )
 :	
@@ -40,16 +42,42 @@ void Game::Go()
 
 void Game::ComposeFrame()
 {
+	Color mColor(150, 0, 150);
 	Font font;
 	Color color(100, 100, 100);
 
-	for (int i=0; i < 10; i++) {					//just putpixel test
-		gfx.PutPixel(100 + i, 100, 100, 0, 255);
-		gfx.PutPixel(100 , 100 + i, 100, 0, 255);
-	}
+	if (mouse.LeftIsPressed()) {
+		font.PrintGlyph(gfx, 'A', 150, 100, color);
+		gfx.PutPixel(mouse.GetMouseX(), 100, color);
+		//gfx.PutPixel(mouse.GetMouseX(), mouse.GetMouseY(), mColor.r, mColor.g, mColor.b);
+	}else{ font.PrintGlyph(gfx, 'B', 150, 100, color); }
+	
+	Color color2(255, 0, 255);
+	gfx.PutPixel(300, 100, color2);  //test PutPixel overload
 
 	font.PrintGlyph(gfx,'A', 200, 200, color);		//fonttest 1
-	font.PrintGlyph(gfx,'B', 210, 200, color);
-	font.PrintGlyph(gfx, 'C', 220, 200, color);
-	font.PrintGlyph(gfx, 'D', 230, 200, color);
+	font.PrintGlyph(gfx,'B', 209, 200, color);
+	font.PrintGlyph(gfx, 'C', 218, 200, color);
+	font.PrintGlyph(gfx, 'D', 226, 200, color);
+	font.PrintGlyph(gfx, '0', 100, 100, color);
+
+	int test=mouse.GetMouseX();			/// Get mouse pos X and display in TL corner
+	char buffer[10];
+	itoa(test, buffer, 10);
+	font.PrintGlyph(gfx, 'X',	    10, 20, color);
+	font.PrintGlyph(gfx, ':',	    20, 20, color);
+	font.PrintGlyph(gfx, buffer[0], 30, 20, color);
+	font.PrintGlyph(gfx, buffer[1], 40, 20, color);
+	font.PrintGlyph(gfx, buffer[2], 50, 20, color);
+	font.PrintGlyph(gfx, buffer[3], 50, 20, color);
+
+	test = mouse.GetMouseY();			/// Get mouse pos X and display in TL corner
+	char buffer2[10];
+	itoa(test, buffer2, 10);
+	font.PrintGlyph(gfx, 'Y',	    10, 40, color);
+	font.PrintGlyph(gfx, ':',	    20, 40, color);
+	font.PrintGlyph(gfx, buffer[0], 30, 40, color);
+	font.PrintGlyph(gfx, buffer[1], 40, 40, color);
+	font.PrintGlyph(gfx, buffer[2], 50, 40, color);
+	font.PrintGlyph(gfx, buffer[3], 50, 40, color);
 }
