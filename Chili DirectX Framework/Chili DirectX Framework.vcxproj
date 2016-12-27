@@ -89,6 +89,7 @@
     <ClCompile Include="..\Assets\Mouse.cpp" />
     <ClCompile Include="..\Assets\Sound.cpp" />
     <ClCompile Include="..\Assets\Timer.cpp" />
+    <ClCompile Include="..\Assets\Utilies.cpp" />
     <ClCompile Include="..\Assets\Windows.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +101,7 @@
     <ClInclude Include="..\Assets\Resource.h" />
     <ClInclude Include="..\Assets\Sound.h" />
     <ClInclude Include="..\Assets\Timer.h" />
+    <ClInclude Include="..\Assets\Utilies.h" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="..\Assets\ChiliDirectXFramework.res" />

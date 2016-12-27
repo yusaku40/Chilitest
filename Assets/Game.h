@@ -32,7 +32,10 @@ public:
 	Game( HWND hWnd,const KeyboardServer& kServer,const MouseServer& mServer );
 	D3DGraphics gfx;
 	void Go();
+	float getPt(int n1, int n2, float perc);
+	void DrawBCurve(Vec2 a, Vec2 b, Vec2 c, Color color);
 private:
+	
 	void ComposeFrame();
 	/********************************/
 	/*  User Functions              */

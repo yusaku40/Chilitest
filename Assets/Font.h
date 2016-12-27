@@ -1,16 +1,24 @@
 #pragma once
 
 #include "D3DGraphics.h"
+#include "Utilies.h"
 
 
 
-
-class Vec2 {
+class Line {
 public:
-	Vec2();
-	Vec2(int a, int b);
-	int a;
-	int b;
+	Line();
+	Line(Vec2 a, Vec2 b);
+	Vec2 vtx1, vtx2;
+};
+
+class Glyph2 {
+public:
+	Glyph2(int lcount);
+	int linecount;
+	Line lines[20];
+
+
 };
 
 class GlyphVector {

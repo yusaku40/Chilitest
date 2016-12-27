@@ -21,6 +21,7 @@
 #pragma once
 
 #include <d3d9.h>
+#include "Utilies.h"
 
 //Simple color system
 class Color {		
@@ -42,6 +43,7 @@ public:
 	void PutPixel(int x, int y, Color color);	// simple overload to use Color class
 	void DrawLine( int x1,int y1,int x2,int y2,int r,int g,int b );
 	void DrawLine(int x1, int y1, int x2, int y2, Color color); // Simple overload to use Color class
+	void DrawLine(Vec2 v1, Vec2 v2, Color color);	// Overload to use Vec2s and Color
 	void DrawCircle( int cx,int cy,int radius,int r,int g,int b );
 	void DrawDisc( int cx,int cy,int r,int rd,int g,int b );
 	void DrawFilledRect(int x1, int y1, int x2, int y2, Color color);
