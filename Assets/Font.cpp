@@ -119,9 +119,9 @@ bool Font::PrintGlyph(D3DGraphics& gRef,int glyph,int startX,int startY,Color co
 
 		case 54:	// 6
 			g.linecount = 7;
-			g.points[0] = { startX +6  , startY -9   };
-			g.points[1] = { startX + 3 , startY - 10 };
-			g.points[2] = { startX     , startY - 8  };
+			g.points[0] = { startX +6  , startY -8   };
+			g.points[1] = { startX + 3 , startY - 9 };
+			g.points[2] = { startX     , startY - 7  };
 			g.points[3] = { startX     , startY - 4  };
 			g.points[4] = { startX + 1 , startY      };
 			g.points[5] = { startX + 4 , startY      };
@@ -136,8 +136,8 @@ bool Font::PrintGlyph(D3DGraphics& gRef,int glyph,int startX,int startY,Color co
 
 		case 55:	// 7
 			g.linecount = 2;
-			g.points[0] = { startX  , startY -10 };
-			g.points[1] = { startX + 6 , startY - 10 };
+			g.points[0] = { startX  , startY -9 };
+			g.points[1] = { startX + 6 , startY - 9 };
 			g.points[2] = { startX +3 , startY  };
 			for (int i = 0; i < g.linecount; i++) {
 				gRef.DrawLine(g.points[i].x, g.points[i].y, g.points[i + 1].x, g.points[i + 1].y, color);
@@ -148,8 +148,8 @@ bool Font::PrintGlyph(D3DGraphics& gRef,int glyph,int startX,int startY,Color co
 		case 56:	// 8
 			g.linecount = 6;
 			g.points[0] = { startX + 0 , startY  };
-			g.points[1] = { startX + 0 , startY - 10 };
-			g.points[2] = { startX + 6 , startY -10 };
+			g.points[1] = { startX + 0 , startY - 9 };
+			g.points[2] = { startX + 6 , startY -9 };
 			g.points[3] = { startX + 6 , startY };
 			g.points[4] = { startX + 0 , startY };
 			g.points[5] = { startX + 0 , startY - 5 };
@@ -161,13 +161,14 @@ bool Font::PrintGlyph(D3DGraphics& gRef,int glyph,int startX,int startY,Color co
 			break;
 
 		case 57:	// 9
-			g.linecount = 5;
+			g.linecount = 6;
 			g.points[0] = { startX + 0, startY - 0 };
-			g.points[1] = { startX + 6, startY - 4 };
-			g.points[2] = { startX + 6, startY - 9 };
-			g.points[3] = { startX + 0, startY - 9 };
-			g.points[4] = { startX + 0, startY - 4 };
-			g.points[5] = { startX + 6, startY - 4 };
+			g.points[1] = { startX + 3, startY - 0 };
+			g.points[2] = { startX + 6, startY - 4 };
+			g.points[3] = { startX + 6, startY - 9 };
+			g.points[4] = { startX + 0, startY - 9 };
+			g.points[5] = { startX + 0, startY - 4 };
+			g.points[6] = { startX + 6, startY - 4 };
 			for (int i = 0; i < g.linecount; i++) {
 				gRef.DrawLine(g.points[i].x, g.points[i].y, g.points[i + 1].x, g.points[i + 1].y, color);
 			}
@@ -409,6 +410,42 @@ bool Font::PrintGlyph(D3DGraphics& gRef,int glyph,int startX,int startY,Color co
 			return true;
 			break;
 
+		case 81:	//  Q
+			g2.linecount = 5;
+			g2.lines[0].vtx1 = { startX + 0  , startY - 0 };
+			g2.lines[0].vtx2 = { startX + 0  , startY - 9 };
+			g2.lines[1].vtx1 = { startX + 0  , startY - 9 };
+			g2.lines[1].vtx2 = { startX + 5  , startY - 9 };
+			g2.lines[2].vtx1 = { startX + 5  , startY - 9 };
+			g2.lines[2].vtx2 = { startX + 5  , startY - 0 };
+			g2.lines[3].vtx1 = { startX + 5  , startY - 0 };
+			g2.lines[3].vtx2 = { startX + 0  , startY - 0 };
+			g2.lines[4].vtx1 = { startX + 3  , startY - 5 };
+			g2.lines[4].vtx2 = { startX + 7  , startY - 1 };
+			for (int i = 0; i < g2.linecount; i++) {
+				gRef.DrawLine(g2.lines[i].vtx1, g2.lines[i].vtx2, color);
+			}
+			return true;
+			break;
+
+		case 82:	//  R
+			g2.linecount = 5;
+			g2.lines[0].vtx1 = { startX + 0  , startY - 0 };
+			g2.lines[0].vtx2 = { startX + 0  , startY - 9 };
+			g2.lines[1].vtx1 = { startX + 0  , startY - 9 };
+			g2.lines[1].vtx2 = { startX + 6  , startY - 9 };
+			g2.lines[2].vtx1 = { startX + 6  , startY - 9 };
+			g2.lines[2].vtx2 = { startX + 6  , startY - 5 };
+			g2.lines[3].vtx1 = { startX + 6  , startY - 5 };
+			g2.lines[3].vtx2 = { startX + 0  , startY - 5 };
+			g2.lines[4].vtx1 = { startX + 0  , startY - 5 };
+			g2.lines[4].vtx2 = { startX + 6  , startY - 0 };
+			for (int i = 0; i < g2.linecount; i++) {
+				gRef.DrawLine(g2.lines[i].vtx1, g2.lines[i].vtx2, color);
+			}
+			return true;
+			break;
+
 		case 83:	//  S
 			g2.linecount = 3;
 			g2.lines[0].vtx1 = { startX + 0  , startY + 0 };
@@ -417,6 +454,60 @@ bool Font::PrintGlyph(D3DGraphics& gRef,int glyph,int startX,int startY,Color co
 			g2.lines[1].vtx2 = { startX + 0  , startY - 9 };
 			g2.lines[2].vtx1 = { startX + 0  , startY - 9 };
 			g2.lines[2].vtx2 = { startX + 6  , startY - 9 };
+			for (int i = 0; i < g2.linecount; i++) {
+				gRef.DrawLine(g2.lines[i].vtx1, g2.lines[i].vtx2, color);
+			}
+			return true;
+			break;
+
+		case 84:	//  T
+			g2.linecount = 2;
+			g2.lines[0].vtx1 = { startX + 3  , startY + 0 };
+			g2.lines[0].vtx2 = { startX + 3  , startY - 9 };
+			g2.lines[1].vtx1 = { startX + 0  , startY - 9 };
+			g2.lines[1].vtx2 = { startX + 6  , startY - 9 };
+			for (int i = 0; i < g2.linecount; i++) {
+				gRef.DrawLine(g2.lines[i].vtx1, g2.lines[i].vtx2, color);
+			}
+			return true;
+			break;
+
+		case 85:	//  U
+			g2.linecount = 3;
+			g2.lines[0].vtx1 = { startX + 0  , startY + 0 };
+			g2.lines[0].vtx2 = { startX + 0  , startY - 9 };
+			g2.lines[1].vtx1 = { startX + 0  , startY - 0 };
+			g2.lines[1].vtx2 = { startX + 6  , startY - 0 };
+			g2.lines[2].vtx1 = { startX + 6  , startY - 0 };
+			g2.lines[2].vtx2 = { startX + 6  , startY - 9 };
+			for (int i = 0; i < g2.linecount; i++) {
+				gRef.DrawLine(g2.lines[i].vtx1, g2.lines[i].vtx2, color);
+			}
+			return true;
+			break;
+
+		case 86:	//  V
+			g2.linecount = 2;
+			g2.lines[0].vtx1 = { startX + 3  , startY + 0 };
+			g2.lines[0].vtx2 = { startX + 0  , startY - 9 };
+			g2.lines[1].vtx1 = { startX + 3  , startY - 0 };
+			g2.lines[1].vtx2 = { startX + 6  , startY - 9 };
+			for (int i = 0; i < g2.linecount; i++) {
+				gRef.DrawLine(g2.lines[i].vtx1, g2.lines[i].vtx2, color);
+			}
+			return true;
+			break;
+
+		case 87:	//  W
+			g2.linecount = 4;
+			g2.lines[0].vtx1 = { startX + 0  , startY - 9 };
+			g2.lines[0].vtx2 = { startX + 0  , startY - 0 };
+			g2.lines[1].vtx1 = { startX + 0  , startY - 0 };
+			g2.lines[1].vtx2 = { startX + 3  , startY - 4 };
+			g2.lines[2].vtx1 = { startX + 3  , startY - 4 };
+			g2.lines[2].vtx2 = { startX + 6  , startY - 0 };
+			g2.lines[3].vtx1 = { startX + 6  , startY - 0 };
+			g2.lines[3].vtx2 = { startX + 6  , startY - 9 };
 			for (int i = 0; i < g2.linecount; i++) {
 				gRef.DrawLine(g2.lines[i].vtx1, g2.lines[i].vtx2, color);
 			}
@@ -445,6 +536,20 @@ bool Font::PrintGlyph(D3DGraphics& gRef,int glyph,int startX,int startY,Color co
 			g.points[4] = { startX + 6 , startY - 10 };
 			for (int i = 0; i < g.linecount; i++) {
 				gRef.DrawLine(g.points[i].x, g.points[i].y, g.points[i + 1].x, g.points[i + 1].y, color.r, color.g, color.b);
+			}
+			return true;
+			break;
+
+		case 90:	//  Z
+			g2.linecount = 3;
+			g2.lines[0].vtx1 = { startX + 0  , startY - 9 };
+			g2.lines[0].vtx2 = { startX + 6  , startY - 9 };
+			g2.lines[1].vtx1 = { startX + 6  , startY - 9 };
+			g2.lines[1].vtx2 = { startX + 0  , startY - 0 };
+			g2.lines[2].vtx1 = { startX + 0  , startY - 0 };
+			g2.lines[2].vtx2 = { startX + 6  , startY - 0 };
+			for (int i = 0; i < g2.linecount; i++) {
+				gRef.DrawLine(g2.lines[i].vtx1, g2.lines[i].vtx2, color);
 			}
 			return true;
 			break;

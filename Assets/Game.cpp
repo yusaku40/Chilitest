@@ -134,8 +134,9 @@ void Game::ComposeFrame()
 	MouseWindow(gfx, mouse);
 
 	Color color(100, 100, 100);
-	PrintS(gfx, 200, 200, "ABCDEFGHIJKLMNOP", color);
-	PrintS(gfx, 100, 230, "ABBA WAS HERE", { 0,250,0 });
+	PrintS(gfx, 200, 200, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", color);
+	PrintS(gfx, 200, 220, "0123456789", { 250,200,250 });
+	PrintS(gfx, 100, 240, "ABBA WAS HERE", { 0,250,0 });
 	
 	//fps system parts
 	char buffer3[10];
